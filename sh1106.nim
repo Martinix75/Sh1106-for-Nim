@@ -198,7 +198,7 @@ when isMainModule:
   i2cSetupNim(blokk=i2c1, psda=14.Gpio, pscl=15.Gpio, freq=300_000)
   let oled = newSh1106(i2c=i2c1, lcdAdd=0x3C, width=128, height=64)#, rotate=270)
 
-  oled.text(fmt"ciao",60,55,1)
+  oled.text(fmt"Hello",60,55,1)
   oled.show()
   print("--- Fill ---")
   #oled.clear(0)
@@ -211,6 +211,7 @@ when isMainModule:
   #oled.line(2, 6, 124, 6,1)
   # ora oled.hline(0, 0, 121, 1)
    #oled.vline(90, 6, 45, 1)
+  oled.centerText(fmt"sh1106 Ver: {sh1106Ver}", 5)
   oled.rect(10, 18, 40, 20, 1, false)
   oled.centerText(fmt"Utils Ver:  {utilssh1106.utilSsh1106}", 45)
   #oled.circle(65, 50, 10,1)
